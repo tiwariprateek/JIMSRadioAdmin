@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dark.pro.jimsradioadmin.FragmentProgram"
+    android:orientation="vertical"
+    android:layout_marginLeft="10dp">
+
+    <TextView
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select an operation on programs:"
+        android:textColor="#000000"
+        android:textSize="20dp"/>
+
+    <!--Select program operation layout-->
+
+        <Button
+            android:id="@+id/btn_set_add_program"
+            android:text="Add Program"
+            android:textSize="20dp"
+            android:padding="4dp"
+            android:textColor="#fff"
+            android:background="@drawable/button_background"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"/>
+        <Button
+            android:id="@+id/btn_set_edit_program"
+            android:text="Edit Program"
+            android:textSize="20dp"
+            android:padding="4dp"
+            android:textColor="#fff"
+            android:background="@drawable/button_background"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"/>
+        <Button
+            android:id="@+id/btn_set_remove_program"
+            android:text="Remove Program"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:padding="4dp"
+            android:textColor="#fff"
+            android:background="@drawable/button_background"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

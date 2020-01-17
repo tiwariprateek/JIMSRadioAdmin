@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Admin">
+    <menu>
+
+        <item
+            android:id="@+id/nav_mod_show"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Radio Shows" />
+        <item
+            android:id="@+id/nav_mod_prog"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Radio Programs" />
+        <item
+            android:id="@+id/nav_mod_guest"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Guests" />
+        <item
+            android:id="@+id/nav_mod_anchor"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Anchors" />
+        <item
+            android:id="@+id/nav_mod_schedule"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Schedule" />
+
+
+    </menu>
+    </item>
+
+    <item android:title="User">
+        <menu>
+            <item
+                android:id="@+id/nav_suggestions"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Suggestions" />
+            <item
+                android:id="@+id/nav_ratings"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Rating" />
+
+        </menu>
+    </item>
+
+</menu>

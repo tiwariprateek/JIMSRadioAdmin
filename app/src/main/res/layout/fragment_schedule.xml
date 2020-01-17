@@ -1,0 +1,433 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dark.pro.jimsradioadmin.FragmentSchedule"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <TextView
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select an operation on schedules:"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"/>
+
+    <!--Select schedule operation layout-->
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:background="@drawable/button_background"
+            android:id="@+id/btn_set_add_schedule"
+            android:text="Add \nSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:background="@drawable/button_background"
+            android:id="@+id/btn_set_edit_schedule"
+            android:text="Edit \nSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:background="@drawable/button_background"
+            android:id="@+id/btn_set_remove_schedule"
+            android:text="Remove \nSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:layout_marginTop="5dp"/>
+
+    <ProgressBar
+        android:id="@+id/progbar_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"/>
+
+    <!--add schedule layout-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/layout_add_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter schedule details:"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"/>
+
+            <EditText
+                android:id="@+id/edtadd_schedule_progname"
+                android:hint="Enter program name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"/>
+
+            <EditText
+                android:id="@+id/edtadd_schedule_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter details"
+                android:lines="3"
+                android:minLines="2"
+                android:maxLines="3"
+                android:maxLength="149"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical"/>
+
+
+            <!--scheduled date layout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Scheduled date:"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/add_schedule_date_dd"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="center"
+                        android:hint="DD"
+                        android:inputType="numberSigned"
+                        android:maxLength="2" />
+                    <EditText
+                        android:id="@+id/add_schedule_date_mm"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textAlignment="center"
+                        android:hint="MM"
+                        android:inputType="numberSigned"
+                        android:maxLength="2"/>
+                    <EditText
+                        android:id="@+id/add_schedule_date_yyyy"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textAlignment="center"
+                        android:hint="YYYY"
+                        android:inputType="numberSigned"
+                        android:maxLength="4"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Display shedule range"
+                android:layout_gravity="center_horizontal"/>
+
+            <!--from layout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:textSize="20dp"
+                    android:textColorHint="#0e0e0e"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="From:"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/add_schedule_from_date_dd"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="center"
+                        android:hint="DD"
+                        android:inputType="numberSigned"
+                        android:maxLength="2"/>
+                    <EditText
+                        android:id="@+id/add_schedule_from_date_mm"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textAlignment="center"
+                        android:hint="MM"
+                        android:inputType="numberSigned"
+                        android:maxLength="2"/>
+                    <EditText
+                        android:id="@+id/add_schedule_from_date_yyyy"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textAlignment="center"
+                        android:hint="YYYY"
+                        android:inputType="numberSigned"
+                        android:maxLength="4"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--to layout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:textSize="20dp"
+                    android:textColor="#0e0e0e"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#0e0e0e"
+                    android:hint="To:"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/add_schedule_to_date_dd"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="center"
+                        android:hint="DD"
+                        android:inputType="numberSigned"
+                        android:maxLength="2"/>
+                    <EditText
+                        android:id="@+id/add_schedule_to_date_mm"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textAlignment="center"
+                        android:hint="MM"
+                        android:inputType="numberSigned"
+                        android:maxLength="2"/>
+                    <EditText
+                        android:id="@+id/add_schedule_to_date_yyyy"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textAlignment="center"
+                        android:hint="YYYY"
+                        android:inputType="numberSigned"
+                        android:maxLength="4" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:background="@drawable/button_background"
+                android:id="@+id/btn_add_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Add schedule"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!--edit schedule layout-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/layout_edit_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <TextView
+                android:textColorHint="#0e0e0e"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select a schedule to modify."
+                android:textColor="#000000"
+                android:textSize="15dp"/>
+            <Spinner
+                android:id="@+id/sp_edit_schedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/edtedit_schedule_progname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Update program name"/>
+            <EditText
+                android:id="@+id/edtedit_schedule_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Update details"
+                android:lines="3"
+                android:minLines="2"
+                android:maxLines="3"
+                android:maxLength="149"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:textSize="15dp"
+                    android:textColorHint="#0e0e0e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Scheduled date:"/>
+                <EditText
+                    android:id="@+id/edtedit_schedule_date"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="YYYY/MM/DD"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"/>
+            <TextView
+                android:textColorHint="#0e0e0e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Display shedule dates"
+                android:textColor="#000000"
+                android:textSize="15dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:textSize="15dp"
+                    android:textColorHint="#0e0e0e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="From :"/>
+                <EditText
+                    android:id="@+id/edtedit_schedule_fromdate"
+                    android:layout_width="150dp"
+                    android:hint="YYYY/MM/DD"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:textColorHint="#0e0e0e"
+                    android:textSize="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="To :"/>
+                <EditText
+                    android:id="@+id/edtedit_schedule_todate"
+                    android:layout_width="150dp"
+                    android:hint="YYYY/MM/DD"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_update_schedule"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:background="@drawable/button_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Update schedule"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--remove schedule layout-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/layout_remove_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select a schedule to remove"
+                android:textColor="#000000"
+                android:textColorHint="#0e0e0e"
+                android:textSize="20dp"
+                android:layout_marginTop="5dp"/>
+            <Spinner
+                android:id="@+id/sp_remove_schedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/txt_remove_schedule_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"/>
+            <Button
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:background="@drawable/button_background"
+                android:id="@+id/btn_remove_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remove schedule"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

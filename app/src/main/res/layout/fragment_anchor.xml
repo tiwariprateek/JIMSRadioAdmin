@@ -1,0 +1,243 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dark.pro.jimsradioadmin.FragmentAnchor"
+    android:orientation="vertical">
+
+    <!--anchor operation selection-->
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_set_view_anchor"
+            android:background="@drawable/button_background"
+            android:textColor="#fff"
+            android:text="View \nAnchor"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:background="@drawable/button_background"
+            android:textColor="#fff"
+            android:id="@+id/btn_set_add_anchor"
+            android:text="Add \nAnchor"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:background="@drawable/button_background"
+            android:textColor="#fff"
+            android:id="@+id/btn_set_edit_anchor"
+            android:text="Edit \nAnchor"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:background="@drawable/button_background"
+            android:textColor="#fff"
+            android:id="@+id/btn_set_remove_anchor"
+            android:text="Remove \nAnchor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:layout_marginTop="15dp"/>
+
+    <ProgressBar
+        android:id="@+id/progbar_anchor_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"/>
+
+    <!--view anchor-->
+    <LinearLayout
+        android:id="@+id/layout_view_anchor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select an anchor to view"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:layout_gravity="center_horizontal"/>
+        <ListView
+            android:id="@+id/list_anchor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_vertical"
+            android:dividerHeight="1dp"
+            android:visibility="invisible"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+
+    <!--add anchor-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:id="@+id/layout_add_anchor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="Enter the details of the new anchor"/>
+            <EditText
+                android:id="@+id/edt_add_anchorname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter anchor name"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/edt_add_anchordesc"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Add description"
+                android:lines="3"
+                android:minLines="2"
+                android:maxLines="3"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical"/>
+            <Button
+                android:background="@drawable/button_background"
+                android:textColor="#fff"
+                android:id="@+id/btn_add_anchor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add anchor"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!--edit anchor-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp">
+        <LinearLayout
+            android:id="@+id/layout_edit_anchor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="Select a anchor to update"/>
+            <Spinner
+                android:background="@drawable/border_bottom"
+                android:id="@+id/sp_edit_anchor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="Update the details of the selected anchor"
+                android:layout_marginTop="10dp"/>
+            <EditText
+                android:id="@+id/edt_edit_anchorname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Update anchor name"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/edt_edit_anchordesc"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Update description"
+                android:lines="3"
+                android:minLines="2"
+                android:maxLines="3"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical"/>
+            <Button
+                android:padding="10dp"
+                android:background="@drawable/button_background"
+                android:textColor="#fff"
+                android:id="@+id/btn_edit_anchor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update anchor"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!--remove anchor-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp">
+        <LinearLayout
+            android:id="@+id/layout_remove_anchor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:text="Select a anchor to delete"/>
+            <Spinner
+                android:background="@drawable/border_bottom"
+                android:id="@+id/sp_remove_anchor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:id="@+id/txt_remove_anchorname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:id="@+id/txt_remove_anchordesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"/>
+            <Button
+                android:padding="10dp"
+                android:background="@drawable/button_background"
+                android:textColor="#fff"
+                android:id="@+id/btn_remove_anchor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remove anchor"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
